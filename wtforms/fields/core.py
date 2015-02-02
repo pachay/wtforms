@@ -267,6 +267,9 @@ class Field(object):
             except TypeError:
                 data = self.default
 
+        if hasattr(data, 'id'):
+            data = data.id
+
         self.object_data = data
 
         try:
